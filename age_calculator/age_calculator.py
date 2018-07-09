@@ -19,7 +19,7 @@ def daysOfWholeYears(y1, y2):
         y1 += 1
     return days
 
-def daysOfWholeMonths(m):
+def daysOfWholeMonths(y, m):
     # Takes the month number m as an input and returns
     #  the total number of days from 1st of Jan up to 
     #  given month m excluding m itself (whole months only)
@@ -30,13 +30,16 @@ def daysOfWholeMonths(m):
     days = 0
     i = 0
     while i < m - 1:
-        days += daysOfMonths[i]
+        if i == 1 and isLeapYear(y):
+            days += 29
+        else:
+            days += daysOfMonths[i]
         i += 1
     return days
 
 def daysBetweenDates(y1, m1, d1, y2, m2, d2):
-    days1 = daysOfWholeMonths(m1) + d1
-    days2 = daysOfWholeYears(y1, y2) + daysOfWholeMonths(m2) + d2
+    days1 = daysOfWholeMonths(y1, m1) + d1
+    days2 = daysOfWholeYears(y1, y2) + daysOfWholeMonths(y2, m2) + d2
     days = days2 - days1
     return days
 
