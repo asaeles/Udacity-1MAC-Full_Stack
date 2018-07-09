@@ -52,5 +52,5 @@ def daysBetweenDates(y1, m1, d1, y2, m2, d2):
 
 #print isLeapYear(1900)
 #print daysOfWholeYears(2004,2004)
-#print daysOfWholeMonths(2)
-#print daysBetweenDates(1981, 5, 23, 2018, 5, 19)
+#print daysOfWholeMonths(2003, 3)
+print daysBetweenDates(2000, 3, 1, 1999, 12, 31)
