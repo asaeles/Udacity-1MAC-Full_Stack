@@ -27,13 +27,14 @@ def daysOfWholeYears(y1, y2):
     return sign * days
 
 def daysOfWholeMonths(y, m):
-    # Takes the month number m as an input and returns
-    #  the total number of days from 1st of Jan up to 
-    #  given month m excluding m itself (whole months only)
-    # So if takes Jan (1) as an input it will return
-    #  zero becuase there are no full month before Jan
-    #  in the year
-    # But if it takes Feb it will surely return 31
+    """
+      Takes the month number m as an input and returns
+    the total number of days from 1st of Jan up to 
+    given month m excluding m itself (whole months only)
+      So if takes Jan (1) as an input it will return
+    zero becuase there are no full month before Jan
+    in the year
+     But if it takes Feb it will surely return 31"""
     days = 0
     i = 0
     while i < m - 1:
@@ -54,3 +55,4 @@ def daysBetweenDates(y1, m1, d1, y2, m2, d2):
 #print daysOfWholeYears(2004,2004)
 #print daysOfWholeMonths(2003, 3)
 print daysBetweenDates(2000, 3, 1, 1999, 12, 31)
+print daysOfWholeMonths.__doc__
