@@ -11,13 +11,20 @@ def isLeapYear(year):
 
 def daysOfWholeYears(y1, y2):
     days = 0
-    while y1 < y2:
-        if isLeapYear(y1):
+    if y1 < y2:
+        sign = 1
+    else:
+        sign = -1
+        y = y2
+        y2 = y1
+        y1 = y
+
+    for y in range(y1, y2):
+        if isLeapYear(y):
             days += 366
         else:
             days += 365
-        y1 += 1
-    return days
+    return sign * days
 
 def daysOfWholeMonths(y, m):
     # Takes the month number m as an input and returns
@@ -43,7 +50,7 @@ def daysBetweenDates(y1, m1, d1, y2, m2, d2):
     days = days2 - days1
     return days
 
-#print isLeapYear(2001)
+#print isLeapYear(1900)
 #print daysOfWholeYears(2004,2004)
 #print daysOfWholeMonths(2)
-print daysBetweenDates(1981, 5, 23, 2018, 5, 19)
+#print daysBetweenDates(1981, 5, 23, 2018, 5, 19)
