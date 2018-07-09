@@ -1,8 +1,11 @@
 import time
 import webbrowser
 
-i = 0
-while i < 3:
-	time.sleep(10)
-	webbrowser.open('https://www.youtube.com/watch?v=5ZXret6_Tyk')
-	i += 1
+def break_time(url, wait_sec, num):
+	i = 0
+	while i < num:
+		time.sleep(wait_sec)
+		webbrowser.open(url)
+		i += 1
+
+break_time('https://www.youtube.com/watch?v=YBHWLGkt1hI', 10, 3)
